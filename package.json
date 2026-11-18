@@ -1,0 +1,13 @@
+{
+  "name": "beleza-no-sofa",
+  "private": true,
+  "description": "Landing page da Beleza no Sofá (Karen Paz, cabeleireira em domicílio)",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify",
+    "dev": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "publicar": "npm run build && node scripts/publicar.mjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

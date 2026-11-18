@@ -1,0 +1,7 @@
+node_modules/
+publicar/
+
+# Originais e fotos que não vão para o repositório público
+assets/
+fotos de perfil secundario/
+.playwright-mcp/

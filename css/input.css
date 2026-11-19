@@ -94,6 +94,19 @@
   .wa-float{position:fixed;right:16px;bottom:16px;z-index:50;width:60px;height:60px;border-radius:999px;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s ease,opacity .3s ease}
   .wa-float:active{transform:scale(.94)}
   .wa-float.hide{opacity:0;pointer-events:none;transform:translateY(12px)}
+  /* Cursor de tesoura (só com mouse). Botões e links mantêm a mãozinha; a galeria, a lupa.
+     O "corte" ao clicar troca para a tesoura fechada por um instante (js/main.js). */
+  @media (hover:hover) and (pointer:fine){
+    /* PNG em 1x/2x/3x: o navegador escolhe pela escala da tela e a tesoura não fica pixelada.
+       Os PNGs saem dos SVGs de mesmo nome em img/ (fonte do desenho). */
+    html{cursor:url(../img/cursor-tesoura.png) 9 9,auto;
+      cursor:-webkit-image-set(url(../img/cursor-tesoura.png) 1x,url(../img/cursor-tesoura@2x.png) 2x,url(../img/cursor-tesoura@3x.png) 3x) 9 9,auto;
+      cursor:image-set(url(../img/cursor-tesoura.png) 1x,url(../img/cursor-tesoura@2x.png) 2x,url(../img/cursor-tesoura@3x.png) 3x) 9 9,auto}
+    html.corte{cursor:url(../img/cursor-tesoura-fechada.png) 9 9,auto;
+      cursor:-webkit-image-set(url(../img/cursor-tesoura-fechada.png) 1x,url(../img/cursor-tesoura-fechada@2x.png) 2x,url(../img/cursor-tesoura-fechada@3x.png) 3x) 9 9,auto;
+      cursor:image-set(url(../img/cursor-tesoura-fechada.png) 1x,url(../img/cursor-tesoura-fechada@2x.png) 2x,url(../img/cursor-tesoura-fechada@3x.png) 3x) 9 9,auto}
+    a,button,summary,label,[role="button"]{cursor:pointer}
+  }
   /* Sem mouse (celular): os brilhos rodam quando aparecem na tela e ao tocar */
   @media (hover:none){
     .btn-shine.is-shining::after{transform:translateX(120%)}

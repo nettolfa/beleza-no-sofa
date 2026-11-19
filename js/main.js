@@ -61,3 +61,18 @@
   const end = document.getElementById("agendar");
   new IntersectionObserver(([e]) => fab.classList.toggle("hide", e.isIntersecting), { threshold: 0.2 }).observe(end);
 })();
+
+// Cursor de tesoura: a cada clique fora de botões e links, a tesoura fecha e abre ("corte")
+(() => {
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  // Carrega a tesoura fechada antes, para o primeiro corte não piscar
+  for (const s of ["", "@2x", "@3x"]) new Image().src = `img/cursor-tesoura-fechada${s}.png`;
+  const root = document.documentElement;
+  let t;
+  document.addEventListener("mousedown", e => {
+    if (e.button !== 0) return;
+    clearTimeout(t);
+    root.classList.add("corte");
+    t = setTimeout(() => root.classList.remove("corte"), 160);
+  });
+})();

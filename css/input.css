@@ -17,19 +17,27 @@
   a:focus-visible,button:focus-visible{outline:2px solid #7E5F1C;outline-offset:3px}
   @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   .enter>*{animation:enter .8s cubic-bezier(.2,.7,.2,1) both}.enter>*:nth-child(2){animation-delay:.08s}.enter>*:nth-child(3){animation-delay:.16s}.enter>*:nth-child(4){animation-delay:.24s}
-  /* Logo preto em relevo com brilho. O degradê preto já vem gravado no PNG (img/logo.png),
-     então o logo aparece em qualquer situação. O brilho é uma camada extra recortada no
-     formato do logo: se o navegador bloquear o recorte (ex.: arquivo aberto direto do
-     computador), só o brilho some. */
-  .logo-emboss{filter:drop-shadow(-1px -1px 0 rgba(255,255,255,.55)) drop-shadow(1px 2px 1px rgba(0,0,0,.28)) drop-shadow(0 8px 14px rgba(0,0,0,.12))}
-  .logo-gloss{position:absolute;inset:0;pointer-events:none;
-    -webkit-mask:url(../img/logo.png) center/contain no-repeat;mask:url(../img/logo.png) center/contain no-repeat;
-    background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%) no-repeat;
-    background-size:300% 100%;background-position:150% 0}
-  .logo-shine .logo-gloss{animation:shine 1.8s cubic-bezier(.4,0,.2,1) .9s both}
-  .logo-shine:hover .logo-gloss{animation:shine-again 1.4s cubic-bezier(.4,0,.2,1) both}
+  /* Logo em folha de ouro. O PNG (img/logo.png) continua no HTML para o texto alternativo e o
+     tamanho; por cima, camadas recortadas no formato do logo pintam o dourado, o brilho quente
+     e o reflexo que segue o mouse. O PNG só fica invisível quando o navegador entende o recorte
+     (@supports); se não entender, aparece o logo preto original. */
+  .logo-gold{filter:drop-shadow(-1px -1px 0 rgba(255,250,235,.7)) drop-shadow(1px 2px 1px rgba(60,40,5,.45)) drop-shadow(0 10px 16px rgba(60,40,5,.18))}
+  .logo-gold-sm{filter:drop-shadow(0 1px 0 rgba(60,40,5,.35))}
+  .logo-mask{position:absolute;inset:0;pointer-events:none;
+    -webkit-mask:url(../img/logo.png) center/contain no-repeat;mask:url(../img/logo.png) center/contain no-repeat}
+  @supports ((-webkit-mask-image:url(x.png)) or (mask-image:url(x.png))){.logo-gold img{opacity:0}}
+  .logo-foil{background:linear-gradient(170deg,#F6E7B0 0%,#D9B85F 22%,#A98330 42%,#7E5F1C 58%,#C9A24B 76%,#F1DC97 88%,#9A7628 100%)}
+  .logo-warm{background:linear-gradient(105deg,transparent 40%,rgba(255,246,214,.95) 50%,transparent 60%) no-repeat;
+    background-size:300% 100%;background-position:150% 0;mix-blend-mode:screen}
+  .logo-shine .logo-warm{animation:shine 2s cubic-bezier(.4,0,.2,1) .9s both}
+  .logo-shine:hover .logo-warm{animation:shine-again 1.4s cubic-bezier(.4,0,.2,1) both}
   @keyframes shine{from{background-position:150% 0}to{background-position:-50% 0}}
   @keyframes shine-again{from{background-position:150% 0}to{background-position:-50% 0}}
+  /* Placa 3D: inclina seguindo o mouse (js/main.js); o reflexo acompanha o cursor */
+  .logo-tiltzone{perspective:900px}
+  .logo-tilt{transition:transform .25s ease-out;transform-style:preserve-3d}
+  .logo-follow{background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,246,214,.95) 0%,rgba(255,236,180,.45) 14%,transparent 34%);
+    mix-blend-mode:screen;opacity:var(--glow,0);transition:opacity .3s}
   /* Gota que desce do hero com a seta */
   .drop{position:absolute;left:50%;top:0;transform:translateX(-50%);width:168px;height:46px;display:block;z-index:5}
   .drop svg.shape{position:absolute;inset:0;width:100%;height:100%}

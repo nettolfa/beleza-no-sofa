@@ -76,3 +76,22 @@
     t = setTimeout(() => root.classList.remove("corte"), 160);
   });
 })();
+
+// Logo dourada em 3D: inclina seguindo o mouse e o reflexo acompanha o cursor (só com mouse)
+(() => {
+  const zona = document.querySelector(".logo-tiltzone"), placa = zona && zona.querySelector(".logo-tilt");
+  if (!placa || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  zona.addEventListener("pointermove", e => {
+    if (e.pointerType !== "mouse") return;
+    const r = placa.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    placa.style.transform = `rotateY(${(x - .5) * 18}deg) rotateX(${(.5 - y) * 14}deg) scale(1.03)`;
+    placa.style.setProperty("--mx", x * 100 + "%");
+    placa.style.setProperty("--my", y * 100 + "%");
+    placa.style.setProperty("--glow", 1);
+  });
+  zona.addEventListener("pointerleave", () => {
+    placa.style.transform = "";
+    placa.style.setProperty("--glow", 0);
+  });
+})();

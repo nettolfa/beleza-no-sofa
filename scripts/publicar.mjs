@@ -69,6 +69,26 @@ A Karen vai até a casa da cliente e leva secador, escova, produtos e capa. Ante
 - Alisamentos: progressivas com e sem formol e botox.
 - Soltura de Cachos: soltura ácida, mantendo a integridade dos cachos.
 
+## Planos mensais de escovação
+
+Escova em casa o mês inteiro, com horários garantidos. Todos os planos incluem lavagem e hidratação básica.
+
+- 4 escovas por mês: R$ 240 (R$ 60 por escova).
+- 6 escovas por mês: R$ 360 (R$ 60 por escova).
+- 8 escovas por mês: R$ 480 (R$ 60 por escova).
+
+Regras do plano:
+
+- Válido por 30 dias; sessões não cumulativas.
+- Pagamento antecipado via Pix ou cartão.
+- Plano individual, intransferível e para um único endereço.
+- Horários definidos no início do mês.
+- Valores para cabelos curtos e médios, com volume normal.
+- Reagendamento com 24h; falta sem aviso utiliza a sessão.
+- Cabelos longos ou volumosos: + R$ 15 por sessão.
+- Cabelos extralongos ou com megahair: + R$ 25 por sessão.
+- Deslocamento incluído na área principal; demais regiões sob taxa.
+
 ## Atendimento
 
 - Região: Duque de Caxias (RJ) e região.

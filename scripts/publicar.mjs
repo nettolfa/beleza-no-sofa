@@ -87,7 +87,7 @@ Regras do plano:
 - Reagendamento com 24h; falta sem aviso utiliza a sessão.
 - Cabelos longos ou volumosos: + R$ 15 por sessão.
 - Cabelos extralongos ou com megahair: + R$ 25 por sessão.
-- Deslocamento incluído na área principal; demais regiões sob taxa.
+- Valor do deslocamento depende do endereço e é combinado pelo WhatsApp.
 
 ## Atendimento
 

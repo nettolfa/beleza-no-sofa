@@ -144,3 +144,10 @@
 
 /* Quem pede menos movimento no sistema não vê animações */
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Foto do topo: em telas largas anda para a direita, no espaço vazio fora da
+   coluna, para não encostar no texto. 1366px ou menos: -40px; 1920px: -160px;
+   2560px: -320px. Fora das camadas para vencer a classe right-0 do Tailwind. */
+@media (min-width:1024px){
+  .hero-foto{right:min(-40px, calc((1280px - 100vw) / 4))}
+}
